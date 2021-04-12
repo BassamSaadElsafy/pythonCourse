@@ -1,21 +1,21 @@
 import sys
-def most_frequent(list):
-    word_counter = {}
+def most_common(list):
+    common_words = []
+    unique_words = []
     for word in list.split(" "):
-        if len(word) > 0 and word != '\r\n':
-            if word not in word_counter:
-                word_counter[word]  = 1
-            else:
-                word_counter[word] += 1
+        
+        if word not in unique_words:
+            unique_words.append(word)
+            common_words.append( (list.split(" ").count(word), word ))
 
-    for i, word in enumerate(sorted(word_counter, key=word_counter.get,reverse=True)[:20]):
-        print("{}: {} ({}) ".format(i+1,word,word_counter[word]))
+    sorted_words = sorted(common_words, reverse = True)
+
+    for w in sorted_words[:20]:
+        
         file1 = open("popular_words.txt","a")
-        file1.write(word + " (" + str(word_counter[word]) + ")" +"\n")
-
-    file1.close()
+        file1.write( str(w) + "\n")
 
 with open(sys.argv[1]) as f:
     contents = f.read()
 
-most_frequent(contents)
+most_common(contents)

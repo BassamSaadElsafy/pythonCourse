@@ -1,0 +1,4 @@
+win:0
+lose:0Win:1
+lose:0win:1
+loss:1
