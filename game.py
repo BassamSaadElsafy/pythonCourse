@@ -3,7 +3,6 @@ import random
 #read games results from result file 
 try:
     f_content = open("result_game", "r")
-    print(1111111)
     content_list = f_content.read().split()
 
     print("wins  : " + content_list[1] + " times")
@@ -68,16 +67,13 @@ def check_number():
 
         #read old results for updating 
         old_count_loses = 0 #intial value
-        old_count_wins = 0 #intial value
+        old_count_wins  = 0 #intial value
         try:
             file_content = open("result_game", "r")
-            print(1111111)
-            content_list = file_content.read().split()
-            
-            old_count_loses = content_list[0]
 
+            content_list = file_content.read().split()
+            old_count_loses = content_list[0]
             old_count_wins  = content_list[1]
-            print(3)
 
         except Exception as err:
             print("this was the first game you played" + str(err))
