@@ -1,4 +1,6 @@
 from Person import Person
+import os
+
 class Employee(Person):         #Employee inherits Person
 
     #initiate attributes for Person   
@@ -19,8 +21,16 @@ class Employee(Person):         #Employee inherits Person
             return "lazy"
 
     def send_email(to, suject,bodyreceiver_name):
+
+        path = "lab2/emails"
+
+        #create folder if not exist
+        if not os.path.exists(path):
+            os.makedirs(path)
+
         #create file which represents the email
-        file = open(to + ".txt" , "w+")
+        filename = to + ".txt"
+        file = open(os.path.join(path, filename) , "w+")
         file.write("To: " + to + "\n" + "Subject: " + suject + "\n" + "Body: " + bodyreceiver_name)
         file.close()
         print("mail sent successfully, file is generated")

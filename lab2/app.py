@@ -4,6 +4,7 @@ from Employee import Employee
 from Office import Office
 import re
 
+
 def print_list():
     print("choose operation:")
     print("(1) Add new employee")
@@ -74,39 +75,6 @@ try:
     else:
         print("Byebye")
 
-
-    # print("email = ", email)
-    # print("salary = ", salary)
-    # print("health rate  = ", health_rate)
-
-
-    # print("--------test get all emp----------")
-    # Office.get_all_employees()
-
-    # print("--------test get specific emp----------")
-    # Office.get_employee(15)
-
-    # print("--------delete emp----------")
-    # Office.fire(15)
-        
-
-    # print("--------test get all emp----------")
-    # Office.get_all_employees()
-
-    #work mood
-    # work_mood = Employee.work(9)
-    # print(work_mood)
-
-    # emp = Employee(15, "sara@test.com", work_mood, 1700, 0)
-    # emp.full_name = "sara ali"
-    # emp.money = 30
-    # emp.sleep_mood= "tired"
-
-    # print(emp.email)
-    # print(emp.full_name)
-    # Office.hire(emp)
-
-    # emp.print_details()
 except Exception as err:
     print("ERROR: " + str(err))
 

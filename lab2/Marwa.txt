@@ -1,3 +1,0 @@
-To: Marwa
-Subject: JS
-Body: Javascript is the future language
